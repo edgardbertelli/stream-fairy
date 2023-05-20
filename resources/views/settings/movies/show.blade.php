@@ -25,8 +25,8 @@
                     <li><strong>Ano: </strong>{{ $movie->year }}</li>
                     <li><strong>Nota: </strong>{{ $movie->rate }}</li>
                     <li><strong>Gênero: </strong>{{ $movie->genre->name }}</li>
-                    <li><strong>Criado em: </strong>{{ $movie->created_at }}</li>
-                    <li><strong>Atualizado em: </strong>{{ $movie->updated_at }}</li>
+                    <li><strong>Criado em: </strong>{{ date('d/m/Y - H\hi', strtotime($movie->created_at)) }}</li>
+                    <li><strong>Atualizado em: </strong>{{ date('d/m/Y - H\hi', strtotime($movie->updated_at)) }}</li>
                 </ul>
 
                 <a href="{{ route('movies.index') }}">

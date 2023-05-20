@@ -27,30 +27,35 @@
                         <div class="mt-4">
                             <x-input-label for="title" :value="__('Título')" />
                             <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" required />
+                            <x-input-error :messages="$errors->get('title')" class="mt-2" />
                         </div>
 
                         <!-- Sinopse -->
                         <div class="mt-4">
                             <x-input-label for="description" :value="__('Sinopse')" />
                             <textarea id="description" class="block mt-1 w-full" name="description" required></textarea>
+                            <x-input-error :messages="$errors->get('description')" class="mt-2" />
                         </div>
 
                         <!-- Diretor -->
                         <div class="mt-4">
                             <x-input-label for="director" :value="__('Diretor')" />
                             <x-text-input id="director" class="block mt-1 w-full" type="text" name="director" required />
+                            <x-input-error :messages="$errors->get('director')" class="mt-2" />
                         </div>
 
                         <!-- Ano -->
                         <div class="mt-4">
                             <x-input-label for="year" :value="__('Ano')" />
                             <x-text-input id="year" class="block mt-1 w-full" type="number" name="year" required />
+                            <x-input-error :messages="$errors->get('year')" class="mt-2" />
                         </div>
 
                         <!-- Nota -->
                         <div class="mt-4">
                             <x-input-label for="rate" :value="__('Nota')" />
                             <x-text-input id="rate" class="block mt-1 w-full" type="number" name="rate" required />
+                            <x-input-error :messages="$errors->get('rate')" class="mt-2" />
                         </div>
 
                         <!-- Gênero -->
@@ -61,6 +66,7 @@
                                 <option value="{{ $genre->id }}">{{ $genre->name }}</option>
                                 @endforeach
                             </select>
+                            <x-input-error :messages="$errors->get('genre_id')" class="mt-2" />
                         </div>
 
                         <a href="{{ route('movies.index') }}">

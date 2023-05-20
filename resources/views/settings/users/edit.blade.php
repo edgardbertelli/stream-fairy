@@ -27,18 +27,21 @@
                         <div>
                             <x-input-label for="name" :value="__('Nome')" />
                             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ $user->name }}" required />
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
 
                         <!-- E-mail -->
                         <div class="mt-4">
                             <x-input-label for="email" :value="__('E-mail')" />
                             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ $user->email }}" required />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
 
                         <!-- Permissão -->
                         <div class="mt-4">
                             <input type="checkbox" id="admin" name="admin" @if($user->admin) checked @endif>
                             <label for="admin"> Administrador</label><br>
+                            <x-input-error :messages="$errors->get('admin')" class="mt-2" />
                         </div>
 
                         <a href="{{ route('users.show', $user->id) }}">

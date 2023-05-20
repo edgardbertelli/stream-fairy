@@ -49,8 +49,8 @@
                             <td>{{ $movie->director }}</td>
                             <td>{{ $movie->year }}</td>
                             <td>{{ $movie->rate }}</td>
-                            <td>{{ $movie->created_at }}</td>
-                            <td>{{ $movie->updated_at }}</td>
+                            <td>{{ date('d/m/Y - H\hi', strtotime($movie->created_at)) }}</td>
+                            <td>{{ date('d/m/Y - H\hi', strtotime($movie->updated_at)) }}</td>
                         </tr>
                         @endforeach
                     </tbody>

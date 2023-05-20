@@ -41,8 +41,8 @@
                             <tr>
                                 <td><a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a></td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
-                                <td>{{ $user->updated_at }}</td>
+                                <td>{{ date('d/m/Y - H\hi', strtotime($user->created_at)) }}</td>
+                                <td>{{ date('d/m/Y - H\hi', strtotime($user->updated_at)) }}</td>
                                 <td>{{ $user->admin ? 'Administrador' :  'Usuário comum' }}</td>
                             </tr>
                             @endif

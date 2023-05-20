@@ -23,8 +23,8 @@
                         <li><strong>Nome: </strong>{{ $user->name }}</li>
                         <li><strong>E-mail: </strong>{{ $user->email }}</li>
                         <li><strong>Permissão: </strong>@if ($user->admin) Administrador @else Usuário comum @endif</li>
-                        <li><strong>Criado em: </strong>{{ $user->created_at }}</li>
-                        <li><strong>Atualizado em: </strong>{{ $user->updated_at }}</li>
+                        <li><strong>Criado em: </strong>{{ date('d/m/Y - H\hi', strtotime($user->created_at)) }}</li>
+                        <li><strong>Atualizado em: </strong>{{ date('d/m/Y - H\hi', strtotime($user->updated_at)) }}</li>
                     </ul>
 
                         <a href="{{ route('users.index') }}">
